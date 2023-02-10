@@ -1,7 +1,9 @@
 extends CheckBox
 
-export var item_type: String
-export var item_number: int
+@export
+var item_type: String
+@export
+var item_number: int
 
 
 func _on_button_switch_toggled(button_pressed):

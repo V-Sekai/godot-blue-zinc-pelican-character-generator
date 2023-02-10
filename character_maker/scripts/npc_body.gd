@@ -40,7 +40,7 @@ func set_part(part: String, p_color: Color, p_rgh: float, p_met: float):
 
 
 func hide_part(part: String):
-	var inode = skeleton_node.find_node(part)
+	var inode = skeleton_node.get_node_or_null(part)
 	if inode:
 		inode.hide()
 

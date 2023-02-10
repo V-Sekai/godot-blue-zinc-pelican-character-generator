@@ -1,9 +1,10 @@
 extends HSlider
 
-export var item_type: String
+@export
+var item_type: String
 
 func _ready():
-	self.connect("value_changed", self, "change_roughness")
+	self.connect("value_changed", Callable(self, "change_roughness"))
 
 
 func change_roughness(value: float):

@@ -1,12 +1,14 @@
-extends Spatial
+extends Node3D
 
 var male_instance = preload("res://character_maker/nodes/chmaker_male.tscn")
 var female_instance = preload("res://character_maker/nodes/chmaker_female.tscn")
 
-export var npc_file: String
-export var randomize_npc: bool = false
-export(String, "standing", "seated", "working", "sleeping") var animation_set: String
-export(float, 0, 1, 0.05) var probability = 1
+@export
+var npc_file: String
+@export
+var randomize_npc: bool = false
+@export_enum("standing", "seated", "working", "sleeping") var animation_set: String
+@export_range(0, 1, 0.05) var probability = 1
 
 var animation_group: String
 var npc_type: String
@@ -19,13 +21,13 @@ func _ready():
 	else:
 		$Mark.hide()
 		npc_load(npc_file)
-		$NPCArea.connect("body_entered", self, "npc_area_entered")
-		$NPCArea.connect("body_exited", self, "npc_area_exited")
+		$NPCArea.connect("body_entered", Callable(self, "npc_area_entered"))
+		$NPCArea.connect("body_exited", Callable(self, "npc_area_exited"))
 
 func npc_load(fname: String):
-	var ff = File.new()
 	var ss = "res://character_maker/data/" + fname + ".npc"
-	if ff.open(ss, File.READ) == OK:
+	var ff : FileAccess = FileAccess.open(ss, FileAccess.READ)
+	if ff:
 		npc_description = ff.get_var()
 		npc_type = npc_description.base.key
 		_create_npc()

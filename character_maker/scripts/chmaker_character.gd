@@ -1,11 +1,8 @@
-extends Spatial
-
-#export var npc_type: int
+extends Node3D
 
 
 func _ready():
 	hide_all()
-	pass
 
 
 func hide_all():

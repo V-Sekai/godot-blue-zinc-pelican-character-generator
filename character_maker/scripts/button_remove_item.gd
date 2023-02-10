@@ -1,10 +1,10 @@
 extends Button
 
-export var item_type: String
+@export var item_type: String
 
 
 func _ready():
-	self.connect("pressed", self, "remove")
+	self.connect("pressed", Callable(self, "remove"))
 	
 	
 func remove():

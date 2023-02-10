@@ -60,6 +60,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HB" type="HBoxContainer" parent="CanvasLayer/C"]
 layout_mode = 0
@@ -146,9 +148,6 @@ my_color = Color(1, 0.894118, 0.819608, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("1")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 item_type = "base"
 my_color = Color(1, 0.796078, 0.654902, 1)
 
@@ -281,9 +280,6 @@ my_color = Color(0.0431373, 0.0352941, 0.0313726, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("1")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 item_type = "eyes"
 my_color = Color(0.129412, 0.0784314, 0.0392157, 1)
 

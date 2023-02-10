@@ -1,20 +1,20 @@
-extends Spatial
+extends Node3D
 
 var male_instance = preload("res://character_maker/nodes/chmaker_male.tscn")
 var female_instance = preload("res://character_maker/nodes/chmaker_female.tscn")
 
-export(float, 0, 1, 0.05) var probability = 0.7
-export(float, 0, 1, 0.05) var npc_sex = 0.5
+@export_range(0, 1, 0.05) var probability = 0.7
+@export_range(0, 1, 0.05) var npc_sex = 0.5
 
-export var style_DARK: bool = true
-export var style_EVIL: bool = true
-export var style_PEACE: bool = true
-export var style_EARTH: bool = true
-export var style_FIRE: bool = true
-export var style_NAVAL: bool = true
-export var style_LIGHT: bool = true
+@export var style_DARK: bool = true
+@export var style_EVIL: bool = true
+@export var style_PEACE: bool = true
+@export var style_EARTH: bool = true
+@export var style_FIRE: bool = true
+@export var style_NAVAL: bool = true
+@export var style_LIGHT: bool = true
 
-export(String, "standing", "seated", "working", "sleeping") var animation_set: String = "standing"
+@export_enum("standing", "seated", "working", "sleeping") var animation_set: String = "standing"
 
 
 var npc_type: String
@@ -30,8 +30,8 @@ func _ready():
 		self.queue_free()
 		return
 
-	$NPCArea.connect("body_entered", self, "npc_area_entered")
-	$NPCArea.connect("body_exited", self, "npc_area_exited")
+	$NPCArea.connect("body_entered", Callable(self, "npc_area_entered"))
+	$NPCArea.connect("body_exited", Callable(self, "npc_area_exited"))
 
 	if style_DARK:
 		npc_styles.append("DARK")

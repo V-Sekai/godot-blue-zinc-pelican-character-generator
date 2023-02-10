@@ -1,10 +1,12 @@
 extends Button
 
-export var item_type: String
-export var my_color: Color
+@export
+var item_type: String
+@export
+var my_color: Color
 
 func _ready():
-	self.connect("pressed", self, "change_color")
+	self.connect("pressed", Callable(self, "change_color"))
 
 
 func change_color():

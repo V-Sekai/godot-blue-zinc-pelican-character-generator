@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 const node_root: String = "Armature_female/Skeleton/"
 const body_node: String = "type_1"
