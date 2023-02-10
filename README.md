@@ -1,12 +1,11 @@
 # lowpoly-chmaker
-# Low Poly Character Maker for Godot, by Fernando Lopez, 2022
 
 1. Description
 2. Compatibility
 3. Installation
 4. Using the characters in your game
 5. Customization
-6. License Creative Commons CC-BY 4.0
+6. License Creative Commons CC-BY 4.0 - Low Poly Character Maker for Godot, by Fernando Lopez, 2022
 
 -------------------------------------------------------------------
 1. Description
