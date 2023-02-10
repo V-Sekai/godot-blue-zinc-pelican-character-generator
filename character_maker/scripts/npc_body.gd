@@ -1,9 +1,10 @@
 extends Node3D
 
-var skeleton_node : Skeleton3D
+var skeleton_node: Skeleton3D
 
 var npc_type: String
 var animation_group: String
+
 
 func _ready():
 	skeleton_node = find_children("*", "Skeleton3D")[0]
@@ -44,16 +45,15 @@ func hide_part(part: String):
 		inode.hide()
 
 
-func set_animation(tt:String, aa: String):
+func set_animation(tt: String, aa: String):
 	npc_type = tt
 	animation_group = aa
 	var animation = NpcMaker.get_animation(npc_type, animation_group)
 	$AnimationPlayer.play(animation)
 
 
-func animation_loop(anim: String):
+func animation_loop(_anim: String):
 	if animation_group == "sleep":
 		$AnimationPlayer.stop()
 	var animation = NpcMaker.get_animation(npc_type, animation_group)
 	$AnimationPlayer.play(animation)
-	

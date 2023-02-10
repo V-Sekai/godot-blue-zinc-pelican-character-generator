@@ -30,10 +30,9 @@ func hide_all():
 	print(get_node(item_path + body_node))
 
 
-
 func load_npc(npc_file: String):
-	print (npc_file)
+	print(npc_file)
+
 
 func save_npc(npc_file: String):
-	print (npc_file)
-
+	print(npc_file)

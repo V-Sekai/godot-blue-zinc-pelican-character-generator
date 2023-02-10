@@ -2,6 +2,7 @@ extends Spatial
 
 #export var npc_type: int
 
+
 func _ready():
 	hide_all()
 	pass
