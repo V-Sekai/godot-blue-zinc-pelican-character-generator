@@ -1,4 +1,4 @@
-# lowpoly-chmaker
+# godot-blue-zinc-pelican
 
 1. Description
 2. Compatibility
