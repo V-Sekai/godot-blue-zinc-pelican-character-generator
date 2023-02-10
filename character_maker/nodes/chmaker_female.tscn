@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bc4obf0afgio4"]
 
-[ext_resource path="res://character_maker/meshes/chmaker_female.glb" type="PackedScene" id=1]
-[ext_resource path="res://character_maker/scripts/npc_body.gd" type="Script" id=2]
+[ext_resource type="PackedScene" uid="uid://baxqk7ws3fuxh" path="res://character_maker/meshes/chmaker_female.glb" id="1"]
+[ext_resource type="Script" path="res://character_maker/scripts/npc_body.gd" id="2"]
 
-[node name="chmaker_female" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="chmaker_female" instance=ExtResource("1")]
+script = ExtResource("2")

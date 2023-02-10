@@ -1,8 +1,8 @@
-extends Spatial
+extends Node3D
 
 var npc_type: String
 var npc_description = {}
-var npc_id
+var npc_id: Node3D
 
 var male_instance = preload("res://character_maker/nodes/chmaker_male.tscn")
 var female_instance = preload("res://character_maker/nodes/chmaker_female.tscn")
@@ -10,17 +10,17 @@ var female_instance = preload("res://character_maker/nodes/chmaker_female.tscn")
 
 
 func _ready():
-	NpcMaker.connect("set_color", self, "set_color")
-	NpcMaker.connect("set_roughness", self, "set_roughness")
-	NpcMaker.connect("set_metalness", self, "set_metalness")
-	NpcMaker.connect("next_item", self, "next_item")
-	NpcMaker.connect("remove_item", self, "remove_item")
+	NpcMaker.connect("set_color", Callable(self, "set_color"))
+	NpcMaker.connect("set_roughness", Callable( self, "set_roughness"))
+	NpcMaker.connect("set_metalness", Callable( self, "set_metalness"))
+	NpcMaker.connect("next_item", Callable( self, "next_item"))
+	NpcMaker.connect("remove_item", Callable( self, "remove_item"))
 
-	NpcMaker.connect("direct_add_item", self, "direct_add_item")
-	NpcMaker.connect("direct_remove_item", self, "direct_remove_item")
+	NpcMaker.connect("direct_add_item",  Callable(self, "direct_add_item"))
+	NpcMaker.connect("direct_remove_item", Callable( self, "direct_remove_item"))
 
-	NpcMaker.connect("npc_load", self, "npc_load")
-	NpcMaker.connect("npc_save", self, "npc_save")
+	NpcMaker.connect("npc_load", Callable( self, "npc_load"))
+	NpcMaker.connect("npc_save",  Callable(self, "npc_save"))
 
 
 
@@ -31,6 +31,7 @@ func clear_npc():
 
 
 func create_npc(tt: String):
+	print("Create npc %s." % tt)
 	clear_npc()
 	npc_type = tt
 	_create_npc()
@@ -38,10 +39,11 @@ func create_npc(tt: String):
 
 
 func _create_npc():
+	# TODO: 2023-02-10 Change to feminine or masculine 
 	if npc_type == "male":
-		npc_id = male_instance.instance()
+		npc_id = male_instance.instantiate()
 	elif npc_type == "female":
-		npc_id = female_instance.instance()
+		npc_id = female_instance.instantiate()
 	self.add_child(npc_id)
 
 
@@ -168,9 +170,9 @@ func randomize_npc():
 
 
 func npc_load(fname: String):
-	var ff = File.new()
 	var ss = "res://character_maker/data/" + fname + ".npc"
-	if ff.open(ss, File.READ) == OK:
+	var ff =  FileAccess.open(ss, FileAccess.READ)
+	if ff:
 		clear_npc()
 		npc_description = ff.get_var()
 		npc_type = npc_description.base.key
@@ -192,9 +194,8 @@ func npc_load(fname: String):
 
 
 func npc_save(fname: String):
-	var ff = File.new()
 	var ss = "res://character_maker/data/" + fname + ".npc"
-	ff.open(ss, File.WRITE)
+	var ff = FileAccess.open(ss, FileAccess.WRITE)
 	ff.store_var(npc_description)
 	ff.close()
 

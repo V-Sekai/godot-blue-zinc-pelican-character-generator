@@ -1,11 +1,12 @@
-extends Spatial
+extends Node3D
 
-onready var skeleton_node = find_node("Skeleton")
+var skeleton_node : Skeleton3D
 
 var npc_type: String
 var animation_group: String
 
 func _ready():
+	skeleton_node = find_children("*", "Skeleton3D")[0]
 	for i in skeleton_node.get_children():
 		var mesh = i.mesh.duplicate()
 		i.mesh = mesh
@@ -15,7 +16,7 @@ func _ready():
 			pass
 		else:
 			i.hide()
-	$AnimationPlayer.connect("animation_finished", self, "animation_loop")
+	$AnimationPlayer.connect("animation_finished", Callable(self, "animation_loop"))
 
 
 func init_npc():
@@ -27,7 +28,7 @@ func set_npc():
 
 
 func set_part(part: String, p_color: Color, p_rgh: float, p_met: float):
-	var inode = skeleton_node.find_node(part)
+	var inode = skeleton_node.get_node(part)
 	if inode:
 		var material = inode.mesh.surface_get_material(0).duplicate()
 		inode.mesh.surface_set_material(0, material)
