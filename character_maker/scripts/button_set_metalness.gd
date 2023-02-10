@@ -1,7 +1,7 @@
 extends HSlider
 
-@export
-var item_type: String
+@export var item_type: String
+
 
 func _ready():
 	self.connect("value_changed", Callable(self, "change_metalness"))

@@ -5,8 +5,8 @@ extends Button
 
 func _ready():
 	self.connect("pressed", Callable(self, "remove"))
-	
-	
+
+
 func remove():
 	print("Button...")
 	NpcMaker.emit_signal("remove_item", item_type)

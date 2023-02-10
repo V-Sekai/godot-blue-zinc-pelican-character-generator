@@ -2,6 +2,7 @@ extends ColorPickerButton
 
 @export var item_type: String
 
+
 func _ready():
 	self.connect("color_changed", Callable(self, "change_color"))
 
