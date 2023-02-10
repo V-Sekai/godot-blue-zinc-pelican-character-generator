@@ -16,7 +16,6 @@ The package contains:
 - The nodes to deploy the characters into your own scenes:
   - "res://character_maker/nodes/npc_game.tscn"
   - "res://character_maker/nodes/npc_random.tscn"
-- A demo: "res://demo/demo_scene.tscn"
 - A blender file containing the source assets used by the character generator.
 - Additional nodes, scripts and bitmaps.
 
