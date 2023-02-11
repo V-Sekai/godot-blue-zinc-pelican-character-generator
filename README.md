@@ -10,6 +10,8 @@
 -------------------------------------------------------------------
 1. Description
 
+https://github.com/fernandolv33/lowpoly-chmaker
+
 This software is a low poly character generator and editor for Godot. You may use it to generate random characters runtime, or you can edit and save specific characters and use them later into the game.
 The package contains:
 - The character editor "res://character_maker/scenes/npc_editor.tscn"
