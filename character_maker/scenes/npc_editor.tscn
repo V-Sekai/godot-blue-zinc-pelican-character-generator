@@ -115,13 +115,13 @@ text = "Save"
 [node name="Sex" type="HBoxContainer" parent="CanvasLayer/C/HB/LeftControl/M/V"]
 layout_mode = 2
 
-[node name="Male" type="Button" parent="CanvasLayer/C/HB/LeftControl/M/V/Sex"]
+[node name="Masculine" type="Button" parent="CanvasLayer/C/HB/LeftControl/M/V/Sex"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Masculine"
 
-[node name="Female" type="Button" parent="CanvasLayer/C/HB/LeftControl/M/V/Sex"]
+[node name="Feminine" type="Button" parent="CanvasLayer/C/HB/LeftControl/M/V/Sex"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1810,8 +1810,8 @@ item_type = "helmet"
 [connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/File/Randomize" to="." method="_on_Randomize_pressed"]
 [connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/File/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/File/Save" to="." method="_on_Save_pressed"]
-[connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/Sex/Male" to="." method="_on_new_npc_pressed" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/Sex/Female" to="." method="_on_new_npc_pressed" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/Sex/Masculine" to="." method="_on_new_npc_pressed" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/C/HB/LeftControl/M/V/Sex/Feminine" to="." method="_on_new_npc_pressed" binds= [2]]
 [connection signal="color_changed" from="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Custom" to="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Custom" method="_on_FreeCloth_color_changed"]
 [connection signal="value_changed" from="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Roughness" to="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Roughness" method="_on_colorRough_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Metalness" to="CanvasLayer/C/HB/LeftControl/M/V/Mouth/Custom/Metalness" method="_on_colorMetal_value_changed"]
