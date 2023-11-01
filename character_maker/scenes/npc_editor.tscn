@@ -119,13 +119,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Male"
+text = "Mascline"
 
 [node name="Female" type="Button" parent="CanvasLayer/C/HB/LeftControl/M/V/Sex"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Female"
+text = "Feminine"
 
 [node name="Skin" type="VBoxContainer" parent="CanvasLayer/C/HB/LeftControl/M/V"]
 layout_mode = 2
