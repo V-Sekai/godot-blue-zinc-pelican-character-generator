@@ -15,9 +15,7 @@ The package includes:
 
 ## 2. Compatibility
 
-- Compatible with Godot 3.5.x
-- Untested in older Godot versions.
-- Untested in Godot 4.0 Alpha
+- Compatible with Godot 4.2 pre-release
 
 ## 3. Installation
 
