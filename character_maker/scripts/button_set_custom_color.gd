@@ -4,6 +4,9 @@ extends ColorPickerButton
 
 
 func _ready():
+	get_picker().color_mode = ColorPicker.MODE_RGB
+	get_picker().picker_shape = ColorPicker.SHAPE_OKHSL_CIRCLE
+
 	self.connect("color_changed", Callable(self, "change_color"))
 
 
